@@ -74,8 +74,30 @@ def handle_message(event):
     # 取得使用者說的文字
     user_msg = event.message.text
     # 準備要回傳的文字訊息
-    reply = TextSendMessage(text=f'Hi,你剛才說的是「{user_msg}」對吧！')
+    #reply = TextSendMessage(text=f'Hi,你剛才說的是「{user_msg}」對吧！')
+    emoji = [
+        {
+            "index": 0,
+            "productId": "5ac1bfd5040ab15980c9b435",
+            "emojiId": "001"
+        },
+        {
+            "index": 13,
+            "productId": "5ac1bfd5040ab15980c9b435",
+            "emojiId": "002"
+        }
+    ]
+    reply = TextSendMessage(text='$ LINE emoji $', emojis=emoji)
 
+    if user_msg == "地址":
+        reply = LocationSendMessage(
+            title='台大資訊工程館',
+            address='106台北市大安區辛亥路二段170號',
+            latitude=25.0194910732659,
+            longitude=121.54155447168785
+        )
+    elif user_msg == "電話":
+        reply = TextSendMessage(text="02-3366-4888")
     # 回傳訊息
     # 若需要回覆多筆訊息可使用
     # line_bot_api.reply_message(token, [Object, Object, ...])
