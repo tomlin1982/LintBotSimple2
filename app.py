@@ -37,7 +37,7 @@ app = Flask(__name__)
 # LINE的Webhook為了辨識開發者身份所需的資料
 # 相關訊息進入網址(https://developers.line.me/console/)
 CHANNEL_ACCESS_TOKEN = 'Hd7CQc1zcysF1pVgCbkHQDuRy/squKGYYmu+dWl5vMepK6GPruMCnl/9PJWnFAyhVAe8OLa8EAuuhZw0a2URXykyf3jf8eo6UgfNMLmesTCdo+p/r08zWBMSIzv1gtH1qbu55OOBr/zqEG0c/F1UbwdB04t89/1O/w1cDnyilFU='
-CHANNEL_SECRET = '3128734564e102d9431cabe855b1a86f'
+CHANNEL_SECRET = 'c80bf935231f8e451bce7ea5d3c90c5b'
 
 # ********* 以下為 X-LINE-SIGNATURE 驗證程序 *********
 line_bot_api = LineBotApi(CHANNEL_ACCESS_TOKEN)
