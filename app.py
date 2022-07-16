@@ -111,4 +111,5 @@ if __name__ == "__main__":
     print(f'[Flask運行於連接端口:{port}]')
     # 本機測試使用127.0.0.1, debug=True
     # Heroku部署使用 0.0.0.0
-    app.run(host='127.0.0.1', port=port, debug=True)
+    # app.run(host='127.0.0.1', port=port, debug=True)
+    app.run(host='0.0.0.0', port=port, debug=True)
