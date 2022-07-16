@@ -128,7 +128,7 @@ import os
 if __name__ == "__main__":
     print('[伺服器開始運行]')
     # 取得遠端環境使用的連接端口，若是在本機端測試則預設開啟於port=5500
-    port = int(os.environ.get('PORT', 80))
+    port = int(os.environ.get('PORT', 5050))
     # 使app開始在此連接端口上運行
     print(f'[Flask運行於連接端口:{port}]')
     # 本機測試使用127.0.0.1, debug=True
