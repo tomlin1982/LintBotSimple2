@@ -1,6 +1,15 @@
 # 運行以下程式需安裝模組: line-bot-sdk, flask, pyquery
 # 安裝方式，輸入指令: pip install 模組名稱
 
+
+#開發
+#1. 電腦安裝需要的模組
+#   pip install -r requments.txt
+#2. 啟動 ngrok 測試網址(通道)
+#3. 啟動應用程式 python app.py
+#4. 將測試網址更新Line Webhook
+
+
 # 引入flask模組
 from flask import Flask, request, abort
 # 引入linebot相關模組
