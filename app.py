@@ -81,8 +81,11 @@ def handle_message(event):
     print('*'*30)
     print('[使用者傳入文字訊息]')
     print(str(event))
+    user_id = event.source.user_id
+    profile = line_bot_api.get_profile(user_id)
     # 取得使用者說的文字
     user_msg = event.message.text
+    print(f"{profile.display_name}剛才傳{user_msg}訊息給機器人")
     # 準備要回傳的文字訊息
     reply = menu
     if user_msg in faq:
