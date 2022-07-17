@@ -80,7 +80,7 @@ def handle_message(event):
     # event.message.text : 使用者輸入的訊息內容
     print('*'*30)
     print('[使用者傳入文字訊息]')
-    # print(str(event))
+    print(str(event))
     # 取得使用者說的文字
     user_msg = event.message.text
     # 準備要回傳的文字訊息
