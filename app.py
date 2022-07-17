@@ -39,7 +39,7 @@ from linebot.models import (
     CarouselColumn
 )
 
-from modules.reply imort faq, menu
+from modules.reply import faq, menu
 
 # 定義應用程式是一個Flask類別產生的實例
 app = Flask(__name__)
@@ -84,7 +84,7 @@ def handle_message(event):
     # 取得使用者說的文字
     user_msg = event.message.text
     # 準備要回傳的文字訊息
-    reply = TextSendMessage(text=f'Hi,你剛才說的是「{user_msg}」對吧！')
+    reply = menu
     if user_msg in faq:
         reply = faq[user_msg]
 
