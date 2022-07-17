@@ -7,6 +7,8 @@ from linebot.models import (
 
 # 常見問答表
 faq = {
+    '營業時間':TextSendMessage(text='09:00~18:00'),
+    '公車':TextSendMessage(text='搭乘650至XXX站'),
     '貼圖': StickerSendMessage(
         package_id='1',
         sticker_id='1'
