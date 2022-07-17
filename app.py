@@ -40,6 +40,10 @@ from linebot.models import (
 )
 
 from modules.reply import faq, menu
+from modules.currency import get_exchange_table
+
+table = get_exchange_table()
+
 
 # 定義應用程式是一個Flask類別產生的實例
 app = Flask(__name__)
@@ -85,11 +89,16 @@ def handle_message(event):
     profile = line_bot_api.get_profile(user_id)
     # 取得使用者說的文字
     user_msg = event.message.text
-    print(f"{profile.display_name}剛才傳{user_msg}訊息給機器人")
+    print(f"{profile.display_name}剛才傳「{user_msg}」訊息給機器人")
     # 準備要回傳的文字訊息
     reply = menu
     if user_msg in faq:
         reply = faq[user_msg]
+    elif user_msg in table:
+        bid = table[user_msg]['bid']
+        offer = table[user_msg]['offer']
+        report = f"{user_msg} 買價:{bid} 賣價:{offer}"
+        reply = TextSendMessage(text=report)
 
     # 回傳訊息
     # 若需要回覆多筆訊息可使用
