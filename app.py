@@ -97,7 +97,7 @@ def handle_message(event):
     elif user_msg in table:
         bid = table[user_msg]['bid']
         offer = table[user_msg]['offer']
-        report = f"{user_msg} 買價:{bid} 賣價:{offer}"
+        report = f"{user_msg}\n 買價:{bid} 賣價:{offer}"
         reply = TextSendMessage(text=report)
 
     # 回傳訊息
